@@ -10,7 +10,7 @@ words = deta.Base("words")
 
 @app.route("/")
 def index():
-    return "Khorma!"
+    return "Khorma"
 
 
 if __name__ == "__main__":
