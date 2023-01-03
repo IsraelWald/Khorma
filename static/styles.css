@@ -1,5 +1,64 @@
+:root {
+    --bg: #282a36;
+    --fg: #f8f8f2;
+    --secondary: #44475a;
+    --light-bg: #6272a4;
+    --primary: #50fa7b;
+    --purple: #bd93f9;
+    --orange: #ffb86c;
+    --red: #ff5555;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.navbar {
+    background-color: var(--secondary);
+    padding: 5px;
+    display: flex;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+.navbar a:hover {
+    background-color: var(--light-bg);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+label {
+    display: block;
+}
+
+.main-container {
+    width: 50%;
+    margin: auto;
+}
+
+form {
+    padding: 10px;
+    background-color: var(--secondary);
+}
+.save-btn {
+    padding: 8px;
+    background-color: var(--primary);
+    border: none;
+}
+.form-group {
+    margin-bottom: 5px;
 }

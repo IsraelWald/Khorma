@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from deta import Deta
 import os
 
@@ -10,8 +10,14 @@ words = deta.Base("words")
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    khorma_words = words.fetch().items
+    return render_template("index.html", words=khorma_words)
 
+@app.route("/add-word", methods=["GET", "POST"])
+def add_word():
+    if request.method == "POST":
+        ...
+    return render_template("add_word.html")
 
 if __name__ == "__main__":
     is_repl = os.environ.get("REPL_SLUG", False)
