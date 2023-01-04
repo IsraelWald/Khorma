@@ -12,6 +12,15 @@
         <a href="{{url_for('index')}}">Home</a>
         <a href="{{url_for('add_word')}}">Add A Word</a>
     </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flashed-messages">
+                {% for message in messages %}
+                        <div class="message">{{ message }}</div>
+                    {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
     {% block content %}
     {% endblock content %}
 </body>

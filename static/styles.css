@@ -100,14 +100,11 @@ input[type=text] {
     opacity: 1;
 }
 
-.word {
-    background-color: var(--secondary);
-    border-radius: 10px;
-    padding: 10px;
+.words {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 10px 0;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .collapsed {
@@ -117,17 +114,12 @@ input[type=text] {
     background-color: var(--secondary);
 }
 
-.collapsed > .form-group {
-    all: unset;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    outline: none;
-    background-color: #44475a;
+.word-card {
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.14);
-    width: 100%;
-    color: var(--fg);
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--secondary);
     border-radius: 10px;
-    font-family: inherit;
-    font-size: inherit;
+    width: max-content;
+    min-width: 150px;
 }
