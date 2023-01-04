@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request, url_for
 from deta import Deta
 import os
 
@@ -16,7 +16,17 @@ def index():
 @app.route("/add-word", methods=["GET", "POST"])
 def add_word():
     if request.method == "POST":
-        ...
+        form = request.form
+        english = form.get("english")
+        khorma = form.get("khorma")
+        apos = form.get("apos", False)
+        word = {
+            "english": english,
+            "khorma": khorma,
+            "apos": apos if apos else "No Apostrophe Form",
+        }
+        words.insert(word)
+        return redirect(url_for("index"))
     return render_template("add_word.html")
 
 if __name__ == "__main__":

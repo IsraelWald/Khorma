@@ -63,10 +63,22 @@ form {
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.14);
+    cursor: pointer;
 }
 
 .form-group {
     margin-bottom: 5px;
+}
+
+.collapse-button {
+    margin: 5px 0;
+    display: block;
+    padding: 8px;
+    background-color: var(--purple);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.14);
+    cursor: pointer;
 }
 
 input[type=text] {
@@ -86,4 +98,36 @@ input[type=text] {
 ::placeholder {
     color: var(--light-bg);
     opacity: 1;
+}
+
+.word {
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: var(--secondary);
+}
+
+.collapsed > .form-group {
+    all: unset;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    background-color: #44475a;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.14);
+    width: 100%;
+    color: var(--fg);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: inherit;
 }

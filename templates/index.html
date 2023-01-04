@@ -1,4 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-{{ words }}
+<div class="main-container">
+    <h1 align="center">All Words</h1>
+    {% if words %}
+    <div class="words">
+        {% for word in words %}
+        <div class="word">
+            <p class="english-word">{{word.english}}</p>
+            <p class="khorma-word">{{word.khorma}}</p>
+            {% if word.apos %}
+            <p class="apos">{{word.apos}}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
 {% endblock content %}
