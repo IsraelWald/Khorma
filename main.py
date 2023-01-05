@@ -38,6 +38,10 @@ def add_word():
         return redirect(url_for("index"))
     return render_template("add_word.html")
 
+@app.route("/word/<id>")
+def word(id):
+    word = words.get(id)
+    return render_template("word.html", word=word)
 
 if __name__ == "__main__":
     is_repl = os.environ.get("REPL_SLUG", False)

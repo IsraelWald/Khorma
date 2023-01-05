@@ -123,3 +123,16 @@ input[type=text] {
     width: max-content;
     min-width: 150px;
 }
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.word-page {
+    width: 100%;
+}
+
+.khorma-word {
+    font-size: 20px;
+}
