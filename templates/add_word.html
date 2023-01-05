@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="main-container">
+    <h1 align="center">Add A Word</h1>
+    <form method="post" autocomplete="off">
+        <div class="form-group">
+            <input type="text" id="english" name="english" placeholder="English Word" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="khorma" name="khorma" placeholder="Khorma Word" required>
+        </div>
+        <hr />
+        <button class="collapse-button" id="apos-btn">Add Apostrophe</button>
+        <div class="collapsed">
+            <div class="collapsed-group">
+                <input type="text" id="apos" name="apos" placeholder="Apostrophe Form">
+            </div>
+            <div class="collapsed-group">
+                <input type="text" id="apos" name="apos-meaning" placeholder="Apostrophe Meaning">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save Word" class="save-btn">
+        </div>
+    </form>
+
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapse-button");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="main-container">
+    <h1 align="center">English & Khorma</h1>
+    <div class="word-card word-page">
+        <h2>{{word.english}}</h2>
+        <hr>
+        <p class="khorma-word">{{word.khorma}}</p>
+    </div>
+    {% if word.apos != "No Apostrophe Form" %}
+        <h3 align="center">Apostrophe Form</h3>
+        <div class="word-card word-page">
+            <h2>{{word.apos[0]}}</h2>
+            <hr>
+            <p class="khorma-word">{{word.apos[1]}}</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

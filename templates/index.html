@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="main-container">
+    <h1 align="center">All Words</h1>
+    {% if words %}
+    <div class="words">
+        {% for word in words %}
+        <div class="word-card">
+            <h3><a class="card-link" href="{{url_for('word', id=word.key)}}">{{word.english}}</a></h3>
+            <hr>
+            <p>{{word.khorma}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
